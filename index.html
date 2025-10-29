@@ -1,18 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebPalette - Aesthetic Color Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 <body>
-    <div class="main">
-        <div class="container">
-            <h2 id ="color-code">#fff</h2>
-            <button id ="btn">Click Me</button>
-        </div>
+  <div class="main">
+    <h1>🎨 WebPalette</h1>
+    <p id="subtitle">Generate beautiful colors for your next website</p>
+
+    <div class="controls">
+      <select id="theme-select">
+        <option value="random">🎲 Random</option>
+        <option value="vintage">🎞 Vintage</option>
+        <option value="modern">⚡ Modern</option>
+        <option value="pastel">🌈 Pastel</option>
+        <option value="nature">🌿 Nature</option>
+        <option value="tech">🧠 Tech</option>
+      </select>
+
+      <button id="generate-btn">Generate</button>
+      <button id="lock-primary">🔒 Lock Primary</button>
+      <button id="mode-toggle">🌙 Dark Mode</button>
+      <button id="export-btn">📋 Export CSS</button>
+      <button id="type-toggle">🎨 Gradient Mode</button>
     </div>
-    <script src ="script.js"></script>
+
+    <div class="color-boxes">
+      <div class="color-card">
+        <h2>Primary</h2>
+        <div class="color-display" id="primary"></div>
+        <p id="primary-code">#3498db</p>
+        <button class="copy-btn" onclick="copyColor('primary-code')">Copy</button>
+      </div>
+
+      <div class="color-card">
+        <h2>Secondary</h2>
+        <div class="color-display" id="secondary"></div>
+        <p id="secondary-code">#f39c12</p>
+        <button class="copy-btn" onclick="copyColor('secondary-code')">Copy</button>
+      </div>
+    </div>
+
+    <div class="preview">
+      <h3>Preview</h3>
+      <div class="preview-box">
+        <button id="preview-btn">Click Me</button>
+      </div>
+
+      <div class="palette-preview">
+        <div class="mini-box"></div>
+        <div class="mini-box"></div>
+        <div class="mini-box"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
